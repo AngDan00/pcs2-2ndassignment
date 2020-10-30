@@ -1,0 +1,282 @@
+1)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the insertionSort2 function below.
+def insertionSort2(n, arr): 
+    for i in range(1,n):
+        for j in range(i-1,-1,-1):
+                if arr[j]>arr[j+1]:
+                    arr[j],arr[j+1]=arr[j+1],arr[j]
+                else:
+                    break
+
+        print(*arr)
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
+
+
+2)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the introTutorial function below.
+def introTutorial(V, arr):
+    return(arr.index(V))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    V = int(input())
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = introTutorial(V, arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+
+3)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the insertionSort1 function below.
+def insertionSort1(n, arr):
+    for i in range(1, n):
+        control = arr[i]
+        j = i-1
+        if arr[j]>arr[i]:
+            while control<arr[j] and j>=0:
+                arr[j+1] = arr[j]
+                j -= 1
+                print(' '.join(map(str, arr)))
+            arr[j+1] = control
+    print(' '.join(map(str, arr)))
+         
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort1(n, arr)
+
+4)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the insertionSort2 function below.
+def insertionSort2(n, arr): 
+    for i in range(1,n):
+        for j in range(i-1,-1,-1):
+                if arr[j]>arr[j+1]:
+                    arr[j],arr[j+1]=arr[j+1],arr[j]
+                else:
+                    break
+
+        print(*arr)
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
+
+5)def insertion_sort(l):
+    for i in range(1, len(l)):
+        j = i-1
+        key = l[i]
+        while (j >= 0) and (l[j] > key):
+           l[j+1] = l[j]
+           j -= 1
+        l[j+1] = key
+
+m = int(input().strip())
+ar = [int(i) for i in input().strip().split()]
+insertion_sort(ar)
+print(" ".join(map(str,ar)))
+
+6)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the runningTime function below.
+def runningTime(arr):
+    counter=0
+    if arr==sorted(arr):
+        return counter
+    else:
+        for i in range(1,len(arr)):
+            x=arr[i]
+            for j in range(i):
+                if arr[j]>x:
+                    (arr[i],arr[j])=(arr[j],arr[i])
+                    counter+=1
+        
+        return counter
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = runningTime(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+7)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the quickSort function below.
+def quickSort(arr):
+    return sorted(arr)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = quickSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+
+8)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countingSort function below.
+def countingSort(arr):
+    a=[]
+    for i in range(100):
+        a.append(0)
+    for i in arr:
+        a[i]+=1
+    return a
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+
+9)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countingSort function below.
+def countingSort(arr):
+    a=[]
+    b=[]
+    for i in range(100):
+        a.append(0)
+    for i in arr:
+        a[i]+=1
+    for i in range(len(a)):
+        if a[i]>0:
+            b.extend([i]*a[i])
+    return b
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+
+10)#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the findMedian function below.
+def findMedian(arr):
+    arr.sort()
+    for i in arr:
+         mid=len(arr)//2
+         median=(arr[mid] + arr[~mid])/2
+    return round(median)
+
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = findMedian(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
